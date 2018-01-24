@@ -9,4 +9,6 @@ Welcome to our mixed reality project to provide immersive tours in real museums,
 
 [Mixed Reality Unity Toolkit](https://github.com/Microsoft/MixedRealityToolkit-Unity)
 
+[Mixed Reality Design Labs](https://github.com/Microsoft/MRDesignLabs_Unity)
+
 [Mixed Reality Companion Kit](https://github.com/Microsoft/MixedRealityCompanionKit)
