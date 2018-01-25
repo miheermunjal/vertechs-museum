@@ -9,6 +9,7 @@ TagManager:
   - Exhibit_2
   - Exhibit_3
   - Exhibit_4
+  - ExhibitAudio
   layers:
   - Default
   - TransparentFX
