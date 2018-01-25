@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - SyncMarker
+  - Room
   - Exhibit
   - Exhibit_1
   - Exhibit_2
