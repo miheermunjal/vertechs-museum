@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class exhibit_Hotspot : MonoBehaviour {
 
-    public delegate void HotspotEntered();
-    public static event HotspotEntered OnEntered;
-    public string hotspotTag;
+    public string AudioSourceTag;
     private AudioSource audioSource;
-
-    public delegate void HotspotExited();
-    public static event HotspotExited OnExited;
+    
+    private void Start()
+    {
+        var audioObject = GameObject.FindWithTag(AudioSourceTag);
+        if (audioObject != null)
+        {
+            audioSource = audioObject.GetComponent<AudioSource>();
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("entering hitzone");
-        var audioObject = GameObject.FindWithTag(hotspotTag);
-        audioSource = audioObject.GetComponent<AudioSource>();
-        audioSource.Play();
+        if (audioSource != null && !audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("exiting cube");
-        if (OnExited != null)
+        if (audioSource != null && audioSource.isPlaying)
         {
-            OnExited();
+            audioSource.Stop();
         }
     }
 }
