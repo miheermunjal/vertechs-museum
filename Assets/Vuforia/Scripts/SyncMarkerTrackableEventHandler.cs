@@ -12,7 +12,7 @@ using Vuforia;
 /// <summary>
 ///     A custom handler that implements the ITrackableEventHandler interface.
 /// </summary>
-public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
+public class SyncMarkerTrackableEventHandler : MonoBehaviour, ITrackableEventHandler
 {
     #region PRIVATE_MEMBER_VARIABLES
 
@@ -42,31 +42,46 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         TrackableBehaviour.Status newStatus)
     {
         if (
-            newStatus == TrackableBehaviour.Status.DETECTED ||
+            newStatus == TrackableBehaviour.Status.DETECTED)
+        {
+            //OnTrackingFound();
+            MakeVisible();
+        }
+        else if (
             newStatus == TrackableBehaviour.Status.TRACKED ||
             newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED)
         {
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " found");
-            MakeVisible();
+            //MakeVisible();
         }
         else if (previousStatus == TrackableBehaviour.Status.TRACKED &&
                  newStatus == TrackableBehaviour.Status.NOT_FOUND)
         {
             Debug.Log("Trackable " + mTrackableBehaviour.TrackableName + " lost");
-            OnTrackingLost();
+            //OnTrackingLost();
         }
         else
         {
             // For combo of previousStatus=UNKNOWN + newStatus=UNKNOWN|NOT_FOUND
             // Vuforia is starting, but tracking has not been lost or found yet
             // Call OnTrackingLost() to hide the augmentations
-            OnTrackingLost();
+           //OnTrackingLost();
         }
     }
 
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
+    protected virtual void OnTrackingFound()
+    {
+        var player = GameObject.FindWithTag("MainCamera");
+        var marker = GameObject.FindWithTag("SyncMarker");
+        var room = GameObject.FindWithTag("Room");
+
+        var deltaMarker = marker.transform.position - transform.position;
+        room.transform.position -= deltaMarker;
+
+    }
 
     private void MakeVisible()
     {
