@@ -25,6 +25,34 @@ public class ShowGoldenPath : MonoBehaviour
             agent.destination = target.position;
     }
 
+    public void gotoOne()
+    {
+        target = POI1;
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            GoToTarget();
+    }
+
+    public void gotoTwo()
+    {
+        target = POI2;
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            GoToTarget();
+    }
+
+    public void gotoThree()
+    {
+        target = POI3;
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            GoToTarget();
+    }
+
+    public void gotoStart()
+    {
+        target = start;
+        if (!agent.pathPending && agent.remainingDistance < 0.5f)
+            GoToTarget();
+    }
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Alpha1))

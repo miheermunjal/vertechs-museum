@@ -584,7 +584,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: Team Vertechs
   metroCertificateIssuer: Team Vertechs
-  metroCertificateNotAfter: 008d13a01ab5d401
+  metroCertificateNotAfter: 802cb0762db5d401
   metroApplicationDescription: Museum Guide
   wsaImages: {}
   metroTileShortName: MR Museum Guide
