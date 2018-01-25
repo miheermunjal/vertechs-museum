@@ -264,9 +264,16 @@ PlayerSettings:
     m_Enabled: 1
     m_Devices:
     - WindowsMR
+  - m_BuildTarget: Standalone
+    m_Enabled: 0
+    m_Devices:
+    - Oculus
+    - OpenVR
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Metro
     m_Enabled: 1
+  - m_BuildTarget: Standalone
+    m_Enabled: 0
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   m_TemplateCustomTags: {}
@@ -575,9 +582,9 @@ PlayerSettings:
   metroPackageVersion: 1.0.0.0
   metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: DefaultCompany
-  metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 802f712840b4d401
+  metroCertificateSubject: Team Vertechs
+  metroCertificateIssuer: Team Vertechs
+  metroCertificateNotAfter: 806fd24a77b4d401
   metroApplicationDescription: Museum Guide
   wsaImages: {}
   metroTileShortName: MR Museum Guide

@@ -6,6 +6,11 @@ TagManager:
   tags:
   - SyncMarker
   - Room
+  - Exhibit
+  - Exhibit_1
+  - Exhibit_2
+  - Exhibit_3
+  - Exhibit_4
   layers:
   - Default
   - TransparentFX
