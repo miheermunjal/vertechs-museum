@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using HoloToolkit.Unity.InputModule;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,9 @@ public class exhibit_Hotspot : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.name == "Cursor")
+            return;
+
         Debug.Log("entering hitzone");
         if (audioSource != null && !audioSource.isPlaying)
         {
@@ -27,6 +31,9 @@ public class exhibit_Hotspot : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.name == "Cursor")
+            return;
+
         Debug.Log("exiting cube");
         if (audioSource != null && audioSource.isPlaying)
         {
