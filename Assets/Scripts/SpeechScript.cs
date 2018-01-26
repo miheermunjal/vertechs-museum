@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpeechScript : MonoBehaviour {
 
@@ -10,6 +11,12 @@ public class SpeechScript : MonoBehaviour {
 	void Start () {
         textMesh = GetComponent<TextMesh>();
 	}
+
+    public void resetExperience()
+    {
+        // reset full unity scene
+        SceneManager.LoadScene("MainScene");
+    }
 
     public void ExhibitOneText()
     {
