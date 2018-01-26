@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="lastsupper2" size="0.400000 0.189677" />
+    <ImageTarget name="monalisa" size="0.200000 0.295959" />
+    <ImageTarget name="SyncMarker" size="0.200000 0.199600" />
     <ImageTarget name="box" size="0.200000 0.149091" />
   </Tracking>
 </QCARConfig>
